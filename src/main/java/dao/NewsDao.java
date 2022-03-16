@@ -1,5 +1,6 @@
 package dao;
 
+import models.Department_News;
 import models.Departments;
 import models.News;
 import models.Users;
@@ -12,8 +13,12 @@ public interface NewsDao {
     void addUserToDepartment(Users user, Departments department);
     //read
 
-    List<Departments> getAll();
-    Departments findById(int id);
+    void addNews(News news);
+
+    void addDepartmentNews(Department_News department_news);
+
+    List<News> getAll();
+    News findById(int id);
     List<Users> getAllUsersInDepartment(int department_id);
     List<News> getDepartmentNews(int id);
     //update
