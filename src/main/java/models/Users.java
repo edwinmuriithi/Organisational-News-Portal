@@ -1,6 +1,6 @@
 package models;
 
-public class User {
+public class Users {
 
     private int id;
     private String name;
@@ -8,7 +8,7 @@ public class User {
     private int departmentId;
     private String role;
 
-    public User(int id, String name, String position, int departmentId, String role) {
+    public Users(int id, String name, String position, int departmentId, String role) {
         this.id = id;
         this.name = name;
         this.position = position;
