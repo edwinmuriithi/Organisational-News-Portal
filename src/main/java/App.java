@@ -1,6 +1,8 @@
 import com.google.gson.Gson;
 import dao.Sql2oDepartmentsDao;
 import dao.Sql2oNewsDao;
+
+
 import dao.Sql2oUsersDao;
 import exceptions.ApiException;
 import models.Departments;
@@ -13,6 +15,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
