@@ -1,8 +1,10 @@
 package dao;
 
-import com.sun.jdi.connect.spi.Connection;
 import models.Departments;
 import models.Users;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
+import org.sql2o.Sql2oException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ public class Sql2oUsersDao implements UsersDao{
 
     @Override
     public void add(Users user) {
-        try (Connection con=sql2o.open()){
+        try (org.sql2o.Connection con=sql2o.open()){
             String sql ="INSERT INTO staff (name,position,staff_role) VALUES (:name,:position,:staff_role) ";
 
             int id=(int) con.createQuery(sql,true)
@@ -45,7 +47,7 @@ public class Sql2oUsersDao implements UsersDao{
     @Override
     public List<Departments> getAllUserDepartments(int user_id) {
         List<Departments> departments=new ArrayList<>();
-        try (Connection con=sql2o.open()) {
+        try (org.sql2o.Connection con=sql2o.open()) {
             String sql = "SELECT department_id FROM users_departments WHERE user_id=:user_id";
             List<Integer> departmentIds = con.createQuery(sql)
                     .addParameter("user_id", user_id)
@@ -61,5 +63,15 @@ public class Sql2oUsersDao implements UsersDao{
 
             return departments;
         }
+    }
+
+    @Override
+    public Users findById(int id) {
+        return null;
+    }
+
+    @Override
+    public void clearAll() {
+
     }
 }

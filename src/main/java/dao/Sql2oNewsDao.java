@@ -1,7 +1,9 @@
 package dao;
 
 import models.Department_News;
+import models.Departments;
 import models.News;
+import models.Users;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
@@ -13,6 +15,16 @@ public class Sql2oNewsDao implements NewsDao {
 
     public Sql2oNewsDao(Sql2o sql2o) {
         this.sql2o = sql2o;
+    }
+
+    @Override
+    public void add(Departments department) {
+
+    }
+
+    @Override
+    public void addUserToDepartment(Users user, Departments department) {
+
     }
 
     @Override
@@ -71,6 +83,16 @@ public class Sql2oNewsDao implements NewsDao {
                     .executeAndFetchFirst(News.class);
         }
 
+    }
+
+    @Override
+    public List<Users> getAllUsersInDepartment(int department_id) {
+        return null;
+    }
+
+    @Override
+    public List<News> getDepartmentNews(int id) {
+        return null;
     }
 
     @Override
