@@ -31,7 +31,7 @@ public class App {
         String connectionString = "jdbc:postgresql://ec2-34-224-226-38.compute-1.amazonaws.com:5432/de00oob7lsi82c"; //!
         Sql2o sql2o = new Sql2o(connectionString, "tmqfcpaanszsga", "6a8e32557257b32e73f797e08b09c369de93b378f1407c306ef5052026a3d2ad"); //!
 
-////    LocalHost Db
+//   LocalHost Db
 //    Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/organisational_news_portal","muriithi","123456");
 
 
