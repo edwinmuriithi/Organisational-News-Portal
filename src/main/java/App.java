@@ -2,7 +2,9 @@ import com.google.gson.Gson;
 import dao.Sql2oDepartmentsDao;
 import dao.Sql2oNewsDao;
 import dao.Sql2oUsersDao;
+import exceptions.ApiException;
 import models.Departments;
+import models.News;
 import models.Users;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -146,7 +148,7 @@ public class App {
             return gson.toJson(news);
         });
         post("/news/new/department","application/json",(request, response) -> {
-            News department_news =gson.fromJson(request.body(),News.class);
+            News department_news =gson.fromJson(request.body(), News.class);
             Departments departments=sql2oDepartmentsDao.findById(department_news.getDepartment_id());
             Users users=sql2oUsersDao.findById(department_news.getUser_id());
             if(departments==null){
