@@ -27,12 +27,12 @@ public class App {
         Connection conn;
         Gson gson = new Gson();
 
-//        //    Heroku Db Connect
-//        static String connectionString = "jdbc:postgresql://ec2-3-216-221-31.compute-1.amazonaws.com:5432/daq0dss1uqjbpp"; //!
-//        static Sql2o sql2o = new Sql2o(connectionString, "laynxhqaenrxke", "0e0e26df811d068f818734dcc3eb18a0ae91836ddf34c621d55f6a84e1fceb62"); //!
+        //    Heroku Db Connect
+        String connectionString = "jdbc:postgresql://ec2-3-216-221-31.compute-1.amazonaws.com:5432/daq0dss1uqjbpp"; //!
+        Sql2o sql2o = new Sql2o(connectionString, "laynxhqaenrxke", "0e0e26df811d068f818734dcc3eb18a0ae91836ddf34c621d55f6a84e1fceb62"); //!
 
-//    LocalHost Db
-    Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/organisational_news_portal","muriithi","123456");
+////    LocalHost Db
+//    Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/organisational_news_portal","muriithi","123456");
 
 
 
